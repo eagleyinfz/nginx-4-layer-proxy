@@ -16,6 +16,8 @@ $wget http://nginx.org/download/nginx-1.17.0.tar.gz tar -zxf nginx-1.17.0.tar.gz
 
 # complile
 
+compile with --with-stream to add the module for TCP proxy
+
 ```shell
 $cd nginx-1.17.0
 
@@ -24,8 +26,11 @@ $./configure  --prefix=/usr/local/nginx  --sbin-path=/usr/local/nginx/sbin/nginx
 $make && make install
 ```
 
+
+
 # config
 
+Add stream block at the same level with http
 ```
 #user  nobody;
 worker_processes  1;
